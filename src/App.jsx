@@ -34,8 +34,9 @@ export default function WhatToReply() {
     setError("");
     setResult(null);
 
-    const prompt = `You are a message analysis and reply assistant. Analyze the following text message and respond ONLY in valid JSON with no markdown, no explanation, no backticks.
+const prompt = `You are a message analysis and reply assistant. Analyze the following text message and respond ONLY in valid JSON with no markdown, no explanation, no backticks.
 
+IMPORTANT: Detect the language of the message and reply in the SAME language. If the message is in Hindi, reply in Hindi. If in English, reply in English. If mixed (Hinglish), reply in Hinglish.
 Message: "${message}"
 ${context ? `Context: ${context}` : ""}
 
